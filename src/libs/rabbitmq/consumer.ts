@@ -69,13 +69,19 @@ class Consumer {
                 console.error('[AMQP] channel error', err.message)
             );
             ch.on('close', () => console.log('[AMQP] channel closed'));
-            ch.prefetch(10);
-            ch.assertQueue('web', { durable: true }, (err: Error, _ok: any) => {
-                if (this.closeOnErr(err)) {
-                    return;
+
+            ch.assertExchange('web', 'direct', {durable: false})
+
+            ch.assertQueue('', {
+                exclusive: true
+            }, (err: Error, q) => {
+                if (err) {
+                    throw err;
                 }
-                ch.consume('web', processMsg, { noAck: false });
-                console.log('Consumer is started');
+
+                ch.bindQueue(q.queue, 'web', '');
+
+                ch.consume(q.queue, processMsg);
             });
 
             const processMsg = (msg: any) => {
