@@ -2,10 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb3a2789-a7b8-40b2-9fea-a96fc8149936" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/libs/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/libs/rabbitmq/consumer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/libs/rabbitmq/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/middlewares/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/middlewares/logger.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/providers/app.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/providers/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/providers/libs.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/providers/middlewares.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/providers/services.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environment.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/environment.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.yarn-integrity" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.yarn-integrity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +35,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/proxy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/providers" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
@@ -31,10 +45,29 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/providers" />
+      <recent name="$PROJECT_DIR$/src/common" />
+      <recent name="$PROJECT_DIR$/src/libs" />
+      <recent name="$PROJECT_DIR$/src/middlewares" />
       <recent name="$PROJECT_DIR$/proxy" />
     </key>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="fb3a2789-a7b8-40b2-9fea-a96fc8149936" name="Default Changelist" comment="" />
@@ -43,10 +76,11 @@
       <option name="presentableId" value="Default" />
       <updated>1598555291845</updated>
       <workItem from="1598555292878" duration="1548000" />
+      <workItem from="1598557730018" duration="5134000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
 </project>

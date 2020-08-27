@@ -3,9 +3,6 @@ declare global {
         interface ProcessEnv {
             ENV: string;
             PORT: number;
-            KAFKA_HOST: string;
-            KAFKA_PORT: number;
-            KAFKA_TOPICS: string;
             RABBITMQ_HOST: string;
             RABBITMQ_PORT: number;
             RABBITMQ_USERNAME: string;
