@@ -5,14 +5,13 @@ services:
     container_name: web_pusher
     build:
       context: ${HUNCHO_DIR}/services/web-pusher
-      dockerfile: ${HUNCHO_DIR}/services/web-pusher/build/Dockerfile
+      dockerfile: ${HUNCHO_DIR}/services/web-pusher/build/Dockerfile.qaw
       args:
         NODE_VERSION: 12
     volumes:
-      - ${HUNCHO_DIR}/services/web-pusher/src:/home/app/src
       - ${HUNCHO_DIR}/secrets/golftapir/tech-tapir-firebase-adminsdk-3zrlh-3720b4d899.json:/home/app/secrets/firebase.json
     env_file:
-      - ${HUNCHO_DIR}/env/dev/.env.web-pusher
+      - ${HUNCHO_DIR}/env/qaw/.env.web-pusher
     networks:
       - app-net
 networks:
