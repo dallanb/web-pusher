@@ -1,5 +1,7 @@
 import amqp from 'amqplib/callback_api';
 import config from '../../config';
+import { Admin } from '../firebase';
+import { logger } from '../../common';
 
 class Consumer {
     private _connection: any;
@@ -70,25 +72,30 @@ class Consumer {
             );
             ch.on('close', () => console.log('[AMQP] channel closed'));
 
-            ch.assertExchange('web', 'direct', {durable: false})
+            ch.assertExchange('web', 'direct', { durable: false });
 
-            ch.assertQueue('', {
-                exclusive: true
-            }, (err: Error, q) => {
-                if (err) {
-                    throw err;
+            ch.assertQueue(
+                '',
+                {
+                    exclusive: true,
+                },
+                (err: Error, q) => {
+                    if (err) {
+                        throw err;
+                    }
+
+                    ch.bindQueue(q.queue, 'web', '');
+
+                    ch.consume(q.queue, processMsg);
                 }
-
-                ch.bindQueue(q.queue, 'web', '');
-
-                ch.consume(q.queue, processMsg);
-            });
+            );
 
             const processMsg = (msg: any) => {
                 this.listener(msg, (ok: boolean) => {
                     try {
-                        if (ok) ch.ack(msg);
-                        else ch.reject(msg, true);
+                        if (ok) {
+                            ch.ack(msg);
+                        } else ch.reject(msg, true);
                     } catch (e) {
                         this.closeOnErr(e);
                     }

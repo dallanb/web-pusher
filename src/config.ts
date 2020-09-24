@@ -7,6 +7,8 @@ declare var process: {
         RABBITMQ_USERNAME: string;
         RABBITMQ_PASSWORD: string;
         RABBITMQ_VHOST: string;
+        GOOGLE_APPLICATION_CREDENTIALS: string;
+        DATABASE_URL: string;
     };
 };
 
@@ -18,6 +20,8 @@ class Config {
     RABBITMQ_USERNAME: string = process.env.RABBITMQ_USERNAME;
     RABBITMQ_PASSWORD: string = process.env.RABBITMQ_PASSWORD;
     RABBITMQ_VHOST: string = process.env.RABBITMQ_VHOST;
+    GOOGLE_APPLICATION_CREDENTIALS: string = process.env.GOOGLE_APPLICATION_CREDENTIALS; // path to service account json file
+    DATABASE_URL: string = process.env.DATABASE_URL
 }
 
 export default new Config();
