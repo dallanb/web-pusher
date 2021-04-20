@@ -12,10 +12,12 @@ services:
       - ${HUNCHO_DIR}/services/web-pusher/src:/home/app/src
       - ${HUNCHO_DIR}/secrets/golftapir/tech-tapir-firebase-adminsdk-3zrlh-3720b4d899.json:/home/app/secrets/firebase.json
     env_file:
-      - ${HUNCHO_DIR}/env/dev/.env.web-pusher
-    networks:
-      - app-net
-networks:
-    app-net:
-        external:
-            name: build_app-net
+      - env/.env.web-pusher
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3-management-alpine
+    restart: on-failure
+    volumes:
+      - ${HUNCHO_DIR}/data/prod/rabbitmq/data/:/var/lib/rabbitmq/
+    env_file:
+      - env/.env.rabbitmq

@@ -4,7 +4,7 @@ class App {
     private readonly _application: express.Application;
 
     constructor() {
-        this._application = express();
+        this._application = express()
     }
 
     get application(): express.Application {
